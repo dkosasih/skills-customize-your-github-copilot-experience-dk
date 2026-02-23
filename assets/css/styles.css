@@ -465,11 +465,11 @@ body {
 }
 
 .social-share-btn.twitter {
-  background-color: #1da1f2;
+  background-color: #000000;
 }
 
 .social-share-btn.twitter:hover {
-  background-color: #1a8cd8;
+  background-color: #333333;
 }
 
 .social-share-btn.facebook {

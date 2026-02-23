@@ -155,7 +155,7 @@ class AssignmentPage {
     `;
 
     socialSection.innerHTML = `
-      <h3>📤 Share This Assignment</h3>
+      <h3><span aria-hidden="true">📤</span> Share This Assignment</h3>
       <div class="social-share-buttons">
         ${socialButtons}
       </div>
