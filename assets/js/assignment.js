@@ -110,10 +110,8 @@ class AssignmentPage {
     if (!socialSection) return;
 
     const pageUrl = encodeURIComponent(window.location.href);
-    const sanitizedTitle = this.sanitizeText(this.assignment.title);
-    const sanitizedSchool = this.sanitizeText(this.config.course.school);
-    const shareText = encodeURIComponent(`Check out this assignment: ${sanitizedTitle} - ${sanitizedSchool}`);
-    const shareTitle = encodeURIComponent(sanitizedTitle);
+    const shareText = encodeURIComponent(`Check out this assignment: ${this.assignment.title} - ${this.config.course.school}`);
+    const shareTitle = encodeURIComponent(this.assignment.title);
 
     const socialButtons = `
       <a href="https://x.com/intent/tweet?text=${shareText}&url=${pageUrl}" 
