@@ -99,16 +99,24 @@ class AssignmentPage {
     return icons[type] || icons.default;
   }
 
+  sanitizeText(text) {
+    const element = document.createElement('div');
+    element.textContent = text;
+    return element.innerHTML;
+  }
+
   renderSocialSharing() {
     const socialSection = document.getElementById("social-share-section");
     if (!socialSection) return;
 
     const pageUrl = encodeURIComponent(window.location.href);
-    const shareText = encodeURIComponent(`Check out this assignment: ${this.assignment.title} - ${this.config.course.school}`);
-    const shareTitle = encodeURIComponent(this.assignment.title);
+    const sanitizedTitle = this.sanitizeText(this.assignment.title);
+    const sanitizedSchool = this.sanitizeText(this.config.course.school);
+    const shareText = encodeURIComponent(`Check out this assignment: ${sanitizedTitle} - ${sanitizedSchool}`);
+    const shareTitle = encodeURIComponent(sanitizedTitle);
 
     const socialButtons = `
-      <a href="https://twitter.com/intent/tweet?text=${shareText}&url=${pageUrl}" 
+      <a href="https://x.com/intent/tweet?text=${shareText}&url=${pageUrl}" 
          target="_blank" 
          rel="noopener noreferrer"
          class="social-share-btn twitter">
