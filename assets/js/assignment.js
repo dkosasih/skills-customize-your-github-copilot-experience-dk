@@ -99,12 +99,6 @@ class AssignmentPage {
     return icons[type] || icons.default;
   }
 
-  sanitizeText(text) {
-    const element = document.createElement('div');
-    element.textContent = text;
-    return element.innerHTML;
-  }
-
   renderSocialSharing() {
     const socialSection = document.getElementById("social-share-section");
     if (!socialSection) return;
